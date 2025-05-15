@@ -1,0 +1,20 @@
+http:
+  routers:
+    my-router:
+      rule: "Host(`loadbalancer.plansync.in`)"
+      service: my-service
+      entryPoints:
+        - websecure
+      tls:
+        certResolver: cloudflare
+
+  services:
+    my-service:
+      loadBalancer:
+        servers:
+          - url: "http://s1.server.plansync.in"
+          - url: "http://s2.server.plansync.in"
+        passHostHeader: true
+        healthCheck:
+          path: "/"
+          interval: "10s"

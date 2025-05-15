@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  traefik:
+    image: traefik:v2.10
+    container_name: traefik
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - 8080:8080
+    volumes:
+      - "./traefik.yml:/etc/traefik/traefik.yml:ro"
+      - "./dynamic.yml:/etc/traefik/dynamic.yml:ro"
+      - "./letsencrypt:/letsencrypt"
+    environment:
+      - CF_API_EMAIL=delwinmathew2004@gmail.com # Replace with your Cloudflare email
+      - CF_DNS_API_TOKEN=qhQJjMZwQKN_QNxU0XUlgCdTcaL2HzBsPelfy9x4 # Replace with your Cloudflare API key
+
+networks:
+  traefik-net:
+    driver: bridge
