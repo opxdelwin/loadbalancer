@@ -22,6 +22,11 @@ certificatesResolvers:
 log:
   level: DEBUG
 
+accessLog:
+  filePath: "/var/log/custom/traefik-access.log"
+  format: "common"
+  bufferingSize: 100
+
 # Enable the file provider to load dynamic configurations
 providers:
   file:

@@ -13,6 +13,7 @@ services:
       - "./traefik.yml:/etc/traefik/traefik.yml:ro"
       - "./dynamic.yml:/etc/traefik/dynamic.yml:ro"
       - "./letsencrypt:/letsencrypt"
+      - "./logs/access.log:/var/log/custom/traefik-lb-access.log"
     environment:
       - CF_API_EMAIL=delwinmathew2004@gmail.com # Replace with your Cloudflare email
       - CF_DNS_API_TOKEN=qhQJjMZwQKN_QNxU0XUlgCdTcaL2HzBsPelfy9x4 # Replace with your Cloudflare API key
