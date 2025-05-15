@@ -17,8 +17,8 @@ http:
           - "X-Forwarded-Host"
         requestHeaders:
           X-Forwarded-Proto: "https"
-          X-Forwarded-For: "true"
-          X-Real-IP: "true"
+          X-Forwarded-For: "{{.ClientIP}}"
+          X-Real-IP: "{{.ClientIP}}"
 
   services:
     my-service:
