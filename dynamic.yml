@@ -14,7 +14,7 @@ http:
         servers:
           - url: "https://s1.server.plansync.in"
           - url: "https://s2.server.plansync.in"
-        passHostHeader: true
+        passHostHeader: false
         healthCheck:
           path: "/"
           interval: "10s"
