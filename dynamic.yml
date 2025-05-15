@@ -14,7 +14,7 @@ http:
     headers-middleware:
       headers:
         customRequestHeaders:
-          X-Forwarded-Host: "asss.plansync.in"
+          Meowww: "asss.plansync.in"
 
   services:
     my-service:
