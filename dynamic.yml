@@ -7,14 +7,6 @@ http:
         - websecure
       tls:
         certResolver: cloudflare
-      # middlewares:
-      #   - headers-middleware
-
-  # middlewares:
-  #   headers-middleware:
-  #     headers:
-  #       customRequestHeaders:
-  #         Meowww: "asss.plansync.in"
 
   services:
     my-service:
