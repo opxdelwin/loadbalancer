@@ -5,8 +5,6 @@ http:
       service: my-service
       entryPoints:
         - websecure
-      middlewares:
-        - forward-headers
       tls:
         certResolver: cloudflare
 
@@ -20,16 +18,3 @@ http:
         healthCheck:
           path: "/"
           interval: "10s"
-
-  middlewares:
-    forward-headers:
-      headers:
-        # Forward specific headers to the backends
-        customRequestHeaders:
-          X-Forwarded-For: "{{.ClientIP}}"
-          X-Real-IP: "{{.ClientIP}}"
-          X-Forwarded-Proto: "{{.Protocol}}"
-          X-Forwarded-Host: "{{.Host}}"
-          X-Version: "{{.Request.Headers.X-Version}}"
-          Authorization: "{{.Request.Headers.Authorization}}"
-          User-Agent: "{{.Request.Headers.User-Agent}}"
