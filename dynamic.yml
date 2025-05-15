@@ -5,6 +5,8 @@ http:
       service: my-service
       entryPoints:
         - websecure
+      middlewares:
+        - forward-headers
       tls:
         certResolver: cloudflare
 
