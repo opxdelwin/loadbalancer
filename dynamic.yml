@@ -13,12 +13,8 @@ http:
   middlewares:
     headers-middleware:
       headers:
-        hostsProxyHeaders:
-          - "X-Forwarded-Host"
-        requestHeaders:
-          X-Forwarded-Proto: "https"
-          X-Forwarded-For: ""
-          X-Real-IP: ""
+        customRequestHeaders:
+          X-Forwarded-Host: "asss.plansync.in"
 
   services:
     my-service:
